@@ -1,23 +1,25 @@
-
 import re
+import ipaddress
+import validators
 from IPy import IP
 
 
 def check(x):
     if checkHash(x) == True:
         return print(f"https://www.virustotal.com/gui/file/{x}")
-    if checkIP(x) == True:
+    elif checkIP(x) == True:
         return print(f"https://www.virustotal.com/gui/ip-address/{x}")
-    if checkDomain(x) == True:
-         return print(f"https://www.virustotal.com/gui/domain/{x}")
+ #  elif checkDomain(x) == True:
+ #        return print(f"https://www.virustotal.com/gui/domain/{x}")
     else:
         print("You have not entered an IP Address or a Hash value or a Domain.")
 
 def checkIP(x):
+    ### ip test: 163.116.145.31
     try:
-        if IP(x) == True:
-            return True
-    except ValueError as e:
+        ip_obj = ipaddress.ip_address(x)
+        return True
+    except ValueError:
         return False
 
 def checkHash(x):
