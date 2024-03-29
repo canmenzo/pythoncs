@@ -34,7 +34,7 @@ def checkHash(x):
 
 ### CHECKS THE IP ADDRESS FUNCTION
 def checkIP(x):
-    ### ip test: 163.116.145.31
+    ### ip test: 163.116.145.30
     try:
         ip_obj = ipaddress.ip_address(x)
         print("The value you have entered is an IP Address.")
@@ -44,6 +44,7 @@ def checkIP(x):
 
 ### CHECK THE DOMAIN FUNCTION BY WHOIS IF ITS REGISTERED
 def checkDomain(x):
+    ### domain test: google.com
     try:
       domain_info = whois.whois(x)
       print("The value you have entered is a domain.")
