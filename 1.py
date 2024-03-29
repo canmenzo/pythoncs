@@ -1,8 +1,8 @@
 
 
 ### ASSIGN GLOBAL VARIABLES
-OLD_DOMAIN = ["https://www.threatanalytics.io", "http://www.threatanalytics.io", "www.threatanalytics.io", "threatanalytics.io"]
-NEW_DOMAIN = "https://www.criticalstart.io"
+OLD_DOMAIN = ["https://www.olddomain.com", "http://www.olddomain.com", "www.olddomain.com", "olddomain.com"]
+NEW_DOMAIN = "https://www.newdomain.com"
 
 ### CHECKURL FUNCTION 
 def checkUrl(x):
