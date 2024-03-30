@@ -1,21 +1,33 @@
-
-
-
-
-
+### pyperclip library for copypaste
 import pyperclip
+import re
 
+### defang the url
+def defang(userInput):
+    new_url = userInput.replace("https", "hxxps")
+    new_url = new_url.replace("http", "hxxp")
+    new_url = new_url.replace("://", "[://]")
+    new_url = new_url.replace(".", "[.]")
+    return new_url
 
+### main loop
 print("Welcome to URL Defang Script!")
-old_url = input("\nPlease enter your potentially malicious URL:")
+while True:
+    
+    # get input
+    userInput = input("\nPlease enter your potentially malicious URL (or 'exit' to quit):")
 
-if old_url.find("https") == 0:
-    new_url = old_url.replace("https://", "hxxps[://]")
-elif old_url.find("http") == 0:
-    new_url = old_url.replace("http://", "hxxp[://]")
-else:
-    print("You have entered an incorrect URL.")
-
-print(f"Defanged URL: {new_url} \n")
-print("Defanged URL has been copied to your clipboard.")
-pyperclip.copy(new_url)
+    # exit validation
+    if userInput.lower() == 'exit':
+        print("Exiting...")
+        break
+    # regex validation for url
+    elif re.match(r"(http|https):\/\/.*\..*",userInput):
+        # call function defang
+        final_url = defang(userInput)
+        # print and copy to clipboard
+        print(f"Defanged URL: {final_url} \n")
+        print("Defanged URL has been copied to your clipboard.\n")
+        pyperclip.copy(final_url)
+    else:
+        print("You have entered an incorrect URL.")
