@@ -1,7 +1,7 @@
 
 ### One of the niches of computer science where rock paper and scissors
-### output can be calculated by using remainders in math
-### or modulo operator in python
+### game's output can be calculated by using remainders in math
+### also known as modulo operator in python.
 ### Reference: https://www.geeksforgeeks.org/what-is-a-modulo-operator-in-python/
 # Computer     Human       (computer - human) % 3
 # 0 Rock       0 Rock                0        0 # Draw
