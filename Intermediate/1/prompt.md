@@ -16,3 +16,5 @@ If the hash is found, it should gather and display a menu with the following opt
 The user should be able to select one of the options and display the information. Because the public VT API is rate-limited (500 requests per day and rate of 4 requests per minute), you should implement a caching feature for your script. Before sending a request to the API, you should check your “cache” and see if you have grabbed the hash before.
 
 You must make an account to receive an API key.
+
+> *This project has not been finished.*
